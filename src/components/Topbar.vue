@@ -24,14 +24,13 @@
 <script>
 
 import axios from "axios";
-import { userKey } from "../global";
 
 export default {
 	name: "Topbar",
 	methods: {
 		logout () {
 			delete axios.defaults.headers.common.Authorization;
-			localStorage.removeItem(userKey);
+			localStorage.removeItem("token");
 			return this.$router.push({ path: "/login" });
 		}
 	}

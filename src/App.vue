@@ -15,13 +15,19 @@
     <b-toast id="remove-toast" solid auto-hide variant="danger">
       <div id="warning-meseage">Falha ao remover!</div>
     </b-toast>
+    <b-toast id="fail-login" solid auto-hide variant="danger">
+      <div id="warning-meseage">Erro de login!</div>
+    </b-toast>
+    <b-toast id="user-not-atived" solid auto-hide variant="danger">
+      <div id="warning-meseage">Usuário desativado!</div>
+    </b-toast>
     <router-view />
   </div>
 </template>
 
 <script>
-//import axios from "axios";
-//import { baseApiUrl, userKey } from "../src/global";
+import axios from "axios";
+import { baseApiUrl } from "../src/global";
 
 export default {
 	name: "App",
@@ -31,32 +37,31 @@ export default {
 		};
 	},
 	methods: {
-		/*async validateToken() {
+		async validateToken() {
 			this.validatingToken = true;
 
-			const json = localStorage.getItem(userKey);
-			const userData = JSON.parse(json);
+			const token = localStorage.getItem("token");
 
-			if (!userData) {
+			if (!token) {
 				this.validatingToken = false;
 				return this.$router.push({ path: "/login" });
 			}
-			axios.defaults.headers.common.Authorization = `Bearer ${userData.token}`;
+			axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 
 			const validToken = await axios.post(baseApiUrl + "/validtoken");
 
 			if (!validToken.data.mensege == "valid") {
 				this.validatingToken = false;
 				delete axios.defaults.headers.common.Authorization;
-				localStorage.removeItem(userKey);
+				localStorage.removeItem("token");
 				return this.$router.push({ path: "/login" });
 			}
 
 			this.validatingToken = false;
-		},*/
+		},
 	},
 	created() {
-		//this.validateToken();
+		this.validateToken();
 	},
 };
 </script>
