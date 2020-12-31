@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /dist
+modal.html
 
 # local env files
 .env.local

@@ -27,10 +27,17 @@ import axios from "axios";
 
 export default {
 	name: "Topbar",
+	data: () => {
+		return {
+      
+		}
+	},
 	methods: {
-		logout () {
-			delete axios.defaults.headers.common.Authorization;
-			localStorage.removeItem("token");
+		async logout () {
+			await delete axios.defaults.headers.common.Authorization;
+			await localStorage.removeItem("token");
+			await localStorage.removeItem("admin");
+			await localStorage.removeItem("iduser");
 			return this.$router.push({ path: "/login" });
 		}
 	}
@@ -39,7 +46,7 @@ export default {
 
 <style>
 .navbar {
-  background-color: #fff;
+  background-color: #fafafa;
   border-bottom: 1px solid #dee4ec;
   box-shadow: 5px 7px 26px -5px #cdd4e7;
 }

@@ -8,32 +8,33 @@
       </li>
 
       <li>
-        <a href="/"
+        <a href="/agendamento"
           ><i class="icofont-calendar"></i> Agenda
           <span class="caret float-right"></span
         ></a>
       </li>
+      <div v-if="admin == 'true'">
+        <li>
+          <a href="/profissionais"
+            ><i class="icofont-users-alt-3"></i> Profissionais
+            <span class="caret float-right"></span
+          ></a>
+        </li>
 
-      <li>
-        <a href="/"
-          ><i class="icofont-users-alt-3"></i> Profissionais
-          <span class="caret float-right"></span
-        ></a>
-      </li>
+        <li>
+          <a href="/servicos"
+            ><i class="icofont-search-stock"></i> Serviços
+            <span class="caret float-right"></span
+          ></a>
+        </li>
 
-      <li>
-        <a href="#"
-          ><i class="icofont-search-stock"></i> Serviços
-          <span class="caret float-right"></span
-        ></a>
-      </li>
-
-      <li>
-        <a href="/"
-          ><i class="icofont-ui-timer"></i> Horários
-          <span class="caret float-right"></span
-        ></a>
-      </li>
+        <li>
+          <a href="/"
+            ><i class="icofont-ui-timer"></i> Horários
+            <span class="caret float-right"></span
+          ></a>
+        </li>
+      </div>
       <li>
         <button class="btn btn-success w-75" id="btn-pedido">
           Criar agendamento
@@ -50,10 +51,18 @@ export default {
 	data: () => {
 		return {
 			nomeEmpresa: "TESTE",
+			admin: "",
 		};
 	},
 	methods: {
-		
+		async isAdmin() {
+			const admin = await localStorage.getItem("admin");
+			this.admin = admin;
+		},
+	},
+
+	mounted() {
+		this.isAdmin();
 	},
 };
 </script>
@@ -61,7 +70,7 @@ export default {
 <style>
 body {
   overflow-x: hidden;
-  background-color: #ecf0fa;
+  background-color: #fafafa;
 }
 
 #wrapper {

@@ -1,4 +1,4 @@
-export const baseApiUrl = "https://ghair.herokuapp.com";
+export const baseApiUrl = "http://localhost:3000";
 
 export const userKey = "__knowledge_user";
 

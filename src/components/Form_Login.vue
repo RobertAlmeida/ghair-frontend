@@ -61,12 +61,14 @@ export default {
 			axios
 				.post(baseApiUrl + "/auth", this.user)
 				.then((success) => {
-					console.log(success.data);
+          
 					if (success.data.status !== "Ativo") {
 						this.$bvToast.show("user-not-atived");
 					} else {
 						localStorage.setItem("iduser", success.data.id);
 						localStorage.setItem("token", success.data.token);
+						localStorage.setItem("admin", success.data.admin);
+						axios.defaults.headers.common.Authorization = `Bearer ${success.data.token}`;
 						this.$router.push({ path: "/" });
 					}
 				})
