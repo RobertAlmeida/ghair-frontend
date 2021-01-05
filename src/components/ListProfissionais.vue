@@ -14,9 +14,9 @@
         >
           <b-card
             id="mainColor"
-            border-variant="primary"
+            border-variant="dark"
             :header="profissional.nome.toUpperCase()"
-            header-bg-variant="primary"
+            header-bg-variant="dark"
             header-text-variant="white"
             align="center"
           >

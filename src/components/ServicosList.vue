@@ -1,16 +1,16 @@
 <template>
   <div class="container">
     <div class="text-right pt-4 pb-4">
-      <b-button v-b-modal.modal-1>+ Adicionar serviço</b-button>
+      <b-button v-b-modal.modal-1 class="btn btn-info">+ Adicionar serviço</b-button>
     </div>
     <div class="col-md">
       <div class="row">
         <div class="col-md-4" v-for="serv of servicos" :key="serv.id">
           <b-card
             id="mainColor"
-            border-variant="primary"
+            border-variant="dark"
             header="SERIVÇO"
-            header-bg-variant="primary"
+            header-bg-variant="dark"
             header-text-variant="white"
             align="center"
           >

@@ -35,6 +35,9 @@
           ></a>
         </li>
       </div>
+      <li @click="logout()" > 
+        <a href="#"><i class="icofont-logout" id="logout" ></i> Sair </a>
+      </li>
       <li>
         <button class="btn btn-success w-75" id="btn-pedido">
           Criar agendamento
@@ -46,6 +49,10 @@
 </template>
 
 <script>
+
+import axios from "axios";
+
+
 export default {
 	name: "Sidebar",
 	data: () => {
@@ -59,6 +66,13 @@ export default {
 			const admin = await localStorage.getItem("admin");
 			this.admin = admin;
 		},
+		async logout () {
+			await delete axios.defaults.headers.common.Authorization;
+			await localStorage.removeItem("token");
+			await localStorage.removeItem("admin");
+			await localStorage.removeItem("iduser");
+			return this.$router.push({ path: "/login" });
+		}
 	},
 
 	mounted() {
@@ -94,7 +108,7 @@ body {
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #4b3ffa;
+  background: #414141;
   color: white;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -236,6 +250,10 @@ body {
   #btn-pedido {
     margin-left: -5%;
     margin-top: 13%;
+  }
+
+  #logout {
+    color: red;
   }
 }
 </style>
