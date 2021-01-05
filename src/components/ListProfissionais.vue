@@ -35,7 +35,7 @@
             <b-button
               href="#"
               variant="danger"
-              @click="removeService(profissional.id)"
+              @click="removeProfissional(profissional.id, profissional.email)"
               class="mr-2 pl-2"
               ><strong>Excluir</strong></b-button
             >
@@ -527,6 +527,17 @@ export default {
 					this.$bvToast.show("error-toast");
 				});
 		},
+		async removeProfissional(id, email) {
+      
+			await axios
+				.delete(
+					baseApiUrl + "/profissional/" + id + "/" + localStorage.getItem("iduser") + "/" + email
+				)
+				.then(() => {
+					this.listProfissionais();
+				});
+
+		}
 	},
 	mounted() {
 		this.listServicos();

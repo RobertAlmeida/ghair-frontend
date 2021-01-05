@@ -30,7 +30,7 @@
 
         <li>
           <a href="/"
-            ><i class="icofont-ui-timer"></i> Horários
+            ><i class="icofont-gear-alt"></i> Configurações
             <span class="caret float-right"></span
           ></a>
         </li>
