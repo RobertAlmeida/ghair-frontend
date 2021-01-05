@@ -5,7 +5,7 @@
       <!-- /#page-topbar -->
       <Topbar @toggle="toggleMenu()" />
       <!-- /#page-topbar -->
-      <Profissionais />
+      <ProfissinaisForm />
     </div>
   </div>
 </template>
@@ -13,14 +13,14 @@
 <script>
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
-import Profissionais from "../components/ProfissionaisList";
+import ProfissinaisForm from "../components/ListProfissionais";
 
 export default {
-	name: "Home",
+	name: "Profissionais",
 	components: {
 		Sidebar,
 		Topbar,
-		Profissionais,
+		ProfissinaisForm
 	},
 	data() {
 		return {

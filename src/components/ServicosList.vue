@@ -8,9 +8,9 @@
         <div class="col-md-4" v-for="serv of servicos" :key="serv.id">
           <b-card
             id="mainColor"
-            border-variant="secondary"
+            border-variant="primary"
             header="SERIVÇO"
-            header-bg-variant="secondary"
+            header-bg-variant="primary"
             header-text-variant="white"
             align="center"
           >
