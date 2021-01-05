@@ -276,8 +276,7 @@ export default {
 				.delete(
 					baseApiUrl + "/servico/" + id + "/" + localStorage.getItem("iduser")
 				)
-				.then((resposta) => {
-					console.log(resposta.data);
+				.then(() => {
 					this.listServicos();
 				});
 		},

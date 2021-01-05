@@ -57,7 +57,6 @@ export default {
 	methods: {
 		async isAdmin() {
 			const admin = await localStorage.getItem("admin");
-			console.log(admin);
 			this.admin = admin;
 		},
 	},
