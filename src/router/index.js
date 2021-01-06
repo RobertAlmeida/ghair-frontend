@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Dashboard from "../views/Dashboard.vue";
+import Configuracao from "../views/Configuracao.vue";
 import Agendamento from "../views/ListaAgendamento.vue";
 import Profissionais from "../views/Profissionais.vue";
 import Servicos from "../views/Servicos.vue";
@@ -32,6 +33,11 @@ const routes = [{
 	path: "/servicos",
 	name: "Servicos",
 	component: Servicos
+},
+{
+	path: "/configuracao",
+	name: "Configuracao",
+	component: Configuracao
 }
 ];
 

@@ -29,7 +29,7 @@
         </li>
 
         <li>
-          <a href="/"
+          <a href="/configuracao"
             ><i class="icofont-gear-alt"></i> Configurações
             <span class="caret float-right"></span
           ></a>
